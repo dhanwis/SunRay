@@ -20366,7 +20366,8 @@ margin-right: 30px;
 	font-size: 16px;
 	font-weight: 500;
 }
-.testimonial-12-content .testimonial-12 .testimonial-text i {
+.testimonial-12-content .testimonial-12 .testimonial-text i 
+{
 	color: #1c63b8;
 	font-size: 90px;
 	line-height: 60px;
