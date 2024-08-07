@@ -102,7 +102,9 @@
                                             </div>
                                             <div class="icon-content">
                                                 <p style="text-align: left;font-size: 14px;">Send Us Email</p>
-                                                <h4 class="wt-tilte">contact@sunraysol.com</h4>
+                                                <h4 class="wt-tilte">  <a href="mailto:contact@sunraysol.com">contact@sunraysol.com</a></h4>
+                                              <br>
+                                              
                                             </div>
                                         </div>
                                     </li>                                
@@ -114,7 +116,9 @@
                                             </div>
                                             <div class="icon-content">
                                                 <p style="text-align: left;font-size: 14px;">Get Quick Support </p>
-                                                <h4 class="wt-tilte">Tel: 0824 2215291 <br>Mob:9538010100</h4>
+                                                <h4 class="wt-tilte" style="text-align: left" >Tel: 0824 2215291 <br>Mob:9538010100-karnataka<br>
+                                                Mob:7907668181-Kerala</h4>
+                
                                             </div>
                                         </div>
                                     </li>
@@ -951,7 +955,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                             <a href="#" class="wt-img-effect client-logo2-media">
-                                <img src="{% static 'images/extra/partners/anchor.png' %}" alt="Anchor">
+                                <img src="{% static 'images/extra/partners/anchor.png' %}"  alt="Anchor">
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
@@ -1161,7 +1165,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="widget widget_about">
                         <div class="logo-footer clearfix">
                             <a href="{% url 'index' %}"><img src="{% static 'images/extra/logo.png' %}" alt=""></a>
@@ -1181,24 +1185,9 @@
 
                 </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="widget widget_services">
-                        <h3 class="widget-title">Projects</h3>
-                        <ul>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                        </ul>
+            
 
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="widget widget_services">
                         <h3 class="widget-title">Our Services</h3>
                         <ul>
@@ -1218,9 +1207,55 @@
                         </ul>
                     </div>
                 </div> 
-                <div class="col-lg-3 col-md-6 ">
-                    <div class="mt-5"><br><br><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7778.739387965293!2d74.84248370248847!3d12.88393320927685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35a6b95555555%3A0x9e4419f7b592cb77!2sSun-%20Ray%20Products%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1722484705318!5m2!1sen!2sin" width="280" height="300"  w allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="widget widget_newsletter">
+                        <h3 class="widget-title">Enquiry Form </h3>
+                        <div class="newsletter-input">
+                            <input id="name" type="text" class="form-control" name="email"
+                                placeholder="Enter your Name">
+                            <input id="number" type="tel" class="form-control" name="number"
+                                placeholder="Enter your number">
+                                
+                            <input id="number" type="number" class="form-control" name="number"
+                                placeholder="Enter your pincode">
+                                <select id="states" name="state" class="form-control">
+                                    <option value="" disabled selected>Select a state</option>
+                                    <option value="AP">Andhra Pradesh</option>
+                                    <option value="AR">Arunachal Pradesh</option>
+                                    <option value="AS">Assam</option>
+                                    <option value="BR">Bihar</option>
+                                    <option value="CT">Chhattisgarh</option>
+                                    <option value="GA">Goa</option>
+                                    <option value="GJ">Gujarat</option>
+                                    <option value="HR">Haryana</option>
+                                    <option value="HP">Himachal Pradesh</option>
+                                    <option value="JH">Jharkhand</option>
+                                    <option value="KA">Karnataka</option>
+                                    <option value="KL">Kerala</option>
+                                    <option value="MP">Madhya Pradesh</option>
+                                    <option value="MH">Maharashtra</option>
+                                    <option value="MN">Manipur</option>
+                                    <option value="ML">Meghalaya</option>
+                                    <option value="MZ">Mizoram</option>
+                                    <option value="NL">Nagaland</option>
+                                    <option value="OR">Odisha</option>
+                                    <option value="PB">Punjab</option>
+                                    <option value="RJ">Rajasthan</option>
+                                    <option value="SK">Sikkim</option>
+                                    <option value="TN">Tamil Nadu</option>
+                                    <option value="TG">Telangana</option>
+                                    <option value="TR">Tripura</option>
+                                    <option value="UP">Uttar Pradesh</option>
+                                    <option value="UT">Uttarakhand</option>
+                                    <option value="WB">West Bengal</option>
+                                </select>
+                                <textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Enter your requirements here..."></textarea>
+                            <button type="submit" class="nl-search-btn site-bg-primary title-style-2">Send</button>
+                        </div>
+                        <p>We don’t do mail to spam &amp; your mail id is confidential.</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
