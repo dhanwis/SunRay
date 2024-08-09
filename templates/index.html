@@ -1021,7 +1021,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                             <a href="#" class="wt-img-effect client-logo2-media">
-                                <img src="{% static 'images/extra/partners/anchor.png' %}"   alt="Anchor">
+                                <img src="{% static 'images/extra/partners/anchor.png' %}" style="width: 80px;"   alt="Anchor">
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
@@ -1036,7 +1036,8 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                             <a href="#" class="wt-img-effect client-logo2-media">
-                                <img src="{% static 'images/extra/partners/BHEL_logo.PNG' %}" alt="BHEL">
+                                <img src="{% static 'images/extra/partners/SOLAR_SQUARE.png' %}" alt="Solar Square">
+                                
                                 
                             </a>
                         </div>
@@ -1046,7 +1047,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                             <a href="#" class="wt-img-effect client-logo2-media">
-                                <img src="{% static 'images/extra/partners/polycab-logo.png' %}" alt="Polycab">
+                                <img src="{% static 'images/extra/partners/polycab-logo.png' %}" style=" width: 80px;"alt="Polycab">
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
@@ -1070,7 +1071,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                             <a href="#" class="wt-img-effect client-logo2-media">
-                                <img src="{% static 'images/extra/partners/SOLAR_SQUARE.png' %}" alt="Solar Square">
+                             <img src="{% static 'images/extra/partners/BHEL_logo.PNG' %}" style="width: 30px;" alt="BHEL">
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
@@ -1242,13 +1243,16 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="widget widget_newsletter">
                         <h3 class="widget-title">Enquiry Form </h3>
+                        <form method="post">
+                            {% csrf_token %}
                         <div class="newsletter-input">
-                            <input id="name" type="text" class="form-control" name="email"
+                            <input id="name" type="text" class="form-control" name="name"
                                 placeholder="Enter your Name">
                             <input id="number" type="tel" class="form-control" name="number"
                                 placeholder="Enter your number">
-                                
-                            <input id="number" type="number" class="form-control" name="number"
+                                <input id="email" type="email" class="form-control" name="email"
+                                placeholder="Enter your mail">   
+                            <input id="number" type="number" class="form-control" name="pincode"
                                 placeholder="Enter your pincode">
                                 <select id="states" name="state" class="form-control">
                                     <option value="" disabled selected>Select a state</option>
@@ -1283,6 +1287,10 @@
                                 </select>
                                 <textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Enter your requirements here..."></textarea>
                             <button type="submit" class="nl-search-btn site-bg-primary title-style-2">Send</button>
+                            </form>
+                            {% if message %}
+                         <p style="color: green;">{{ message }}</p>
+                            {% endif %} 
                         </div>
                         <p>We don’t do mail to spam &amp; your mail id is confidential.</p>
                     </div>
@@ -1446,6 +1454,27 @@
         </div>
     </div>
 </div> {% endcomment %}
+  <!-- mail sending lert box  -->
+
+  <script>
+    $(document).ready(function() {
+        $('#enquiryForm').on('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            $.ajax({
+                url: '',  // Use the current URL
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function(response) {
+                    alert(response.message);
+                },
+                error: function(xhr) {
+                    alert(xhr.responseJSON.message);
+                }
+            });
+        });
+    });
+</script>
 <!-- LOADING AREA  END ====== -->
 <script>
     // Activate the carousel with a 3-second interval

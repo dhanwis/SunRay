@@ -24,3 +24,15 @@ class LargeProject(models.Model):
 
     def __str__(self):
         return self.title
+    
+    
+class Enquiry(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    number = models.CharField(max_length=15)
+    pincode = models.CharField(max_length=6)
+    state = models.CharField(max_length=100)
+    comments = models.TextField()
+
+    def __str__(self):
+        return self.name
