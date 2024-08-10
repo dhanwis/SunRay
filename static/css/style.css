@@ -5753,7 +5753,7 @@ div.sep-leaf-left:before{	display:none;}
 	display: block;
 	margin: 0;
 	width: 100%;
-	height: auto;
+	height: 100%;
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 	-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 	-moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
