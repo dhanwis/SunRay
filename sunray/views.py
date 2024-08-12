@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404,HttpResponse
-from .models import Project, LargeProject,Enquiry
+from .models import Project, LargeProject
 from django.shortcuts import render
 from .models import Project, LargeProject
 from django.contrib.auth import authenticate, login, logout
@@ -75,39 +75,6 @@ def delete_project(request, pk):
     return redirect('dashboard')
 
 def index(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        number = request.POST.get('number')
-        pincode = request.POST.get('pincode')
-        state = request.POST.get('state')
-        comments = request.POST.get('comments')
-
-        # Perform simple validation (optional)
-        if name and email and number and pincode and state and comments:
-            # Save the enquiry to the database
-            enquiry = Enquiry(
-                name=name,
-                email=email,
-                number=number,
-                pincode=pincode,
-                state=state,
-                comments=comments
-            )
-            enquiry.save()
-
-            # Send email
-            send_mail(
-                subject=f"Enquiry from {name}",
-                message=f"Name: {name}\nEmail: {email}\nNumber: {number}\nPincode: {pincode}\nState: {state}\nComments: {comments}",
-                from_email=email,  # Use user's email address as the from email
-                recipient_list=['kashyapchandran38@gmail.com'],  # Constant recipient
-                fail_silently=False,
-            )
-            return HttpResponse('Thank you for your enquiry.')
-        else:
-            return HttpResponse('Please fill in all fields.', status=400)
-
     # Retrieve all large projects
     large_projects = LargeProject.objects.all()
     context = {

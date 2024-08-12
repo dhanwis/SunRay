@@ -88,7 +88,6 @@
                             </div>
                         </div>
                         
-                        
                         <div class="header-info-wraper">
                             <div class="header-info">
                                 <ul>
@@ -1047,7 +1046,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                             <a href="#" class="wt-img-effect client-logo2-media">
-                                <img src="{% static 'images/extra/partners/polycab-logo.png' %}" style=" width: 80px;"alt="Polycab">
+                                <img src="{% static 'images/extra/partners/polycab-logo.png' %}" alt="Polycab">
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
@@ -1244,17 +1243,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="widget widget_newsletter">
                         <h3 class="widget-title">Enquiry Form </h3>
-                        <form method="post">
-                            {% csrf_token %}
-                        <div class="newsletter-input">
-                            <input id="name" type="text" class="form-control" name="name"
-                                placeholder="Enter your Name">
-                            <input id="number" type="tel" class="form-control" name="number"
-                                placeholder="Enter your number">
-                                <input id="email" type="email" class="form-control" name="email"
-                                placeholder="Enter your mail">   
-                            <input id="number" type="number" class="form-control" name="pincode"
-                                placeholder="Enter your pincode">
+                        <form onsubmit="sendmail(event)">
+                            <div class="newsletter-input">
+                                <input id="name" type="text" class="form-control" name="name" placeholder="Enter your Name">
+                                <input id="number" type="tel" class="form-control" name="number" placeholder="Enter your number">
+                                <input id="email" type="email" class="form-control" name="email" placeholder="Enter your mail">   
+                                <input id="pincode" type="number" class="form-control" name="pincode" placeholder="Enter your pincode">
                                 <select id="states" name="state" class="form-control">
                                     <option value="" disabled selected>Select a state</option>
                                     <option value="AP">Andhra Pradesh</option>
@@ -1287,11 +1281,11 @@
                                     <option value="WB">West Bengal</option>
                                 </select>
                                 <textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Enter your requirements here..."></textarea>
-                            <button type="submit" class="nl-search-btn site-bg-primary title-style-2">Send</button>
-                            </form>
-                    
-    
-                </div>
+                                <button type="submit" class="nl-search-btn site-bg-primary title-style-2">Send</button>
+                            </div>
+                        </form>
+                        
+                    </div>
 
             </div>
         </div>
@@ -1314,10 +1308,18 @@
 
 
 </footer>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({publicKey: "5QKoh8ufYo38U1vHR"});
+   })();
+</script>
 <!-- FOOTER END -->
 
 <!-- Get In Touch -->
-<div class="contact-slide-hide bg-cover bg-no-repeat"
+{% comment %} <div class="contact-slide-hide bg-cover bg-no-repeat"
     style="background-image:url({% static 'images/background/bg-7.jpg' %})">
     <div class="contact-nav">
         <a href="javascript:void(0)" class="contact_close">×</a>
@@ -1420,7 +1422,8 @@
 
         </div>
     </div>
-</div>
+</div> {% endcomment %}
+
 
 <!-- BUTTON TOP START -->
 <button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
@@ -1453,33 +1456,16 @@
 </div> {% endcomment %}
   <!-- mail sending lert box  -->
 
-  <script>
-    $(document).ready(function() {
-        $('#enquiryForm').on('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
-
-            $.ajax({
-                url: '',  // Use the current URL
-                type: 'POST',
-                data: $(this).serialize(),
-                success: function(response) {
-                    alert(response.message);
-                },
-                error: function(xhr) {
-                    alert(xhr.responseJSON.message);
-                }
-            });
-        });
-    });
-</script>
+ 
 <!-- LOADING AREA  END ====== -->
-<script>
+{% comment %} <script>
     // Activate the carousel with a 3-second interval
     $('#partnersCarousel').carousel({
         interval: 30
     });
-</script>
+</script> {% endcomment %}
 <!-- JAVASCRIPT  FILES ========================================= -->
+<script src="{% static 'js/index.js' %}"></script>
 <script src="{% static 'js/jquery-2.2.0.min.js' %}"></script><!-- JQUERY.MIN JS -->
 <script src="{% static 'js/popper.min.js' %}"></script><!-- POPPER.MIN JS -->
 <script src="{% static 'js/bootstrap.min.js' %}"></script><!-- BOOTSTRAP.MIN JS -->
