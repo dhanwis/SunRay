@@ -1009,7 +1009,7 @@
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
-                            <a href="#" class="wt-img-effect client-logo2-media mt-1"  style="height: 100px;" >
+                            <a href="#" class="wt-img-effect client-logo2-media mt-1"  >
                                 <img src="{% static 'images/extra/partners/sapa.png' %}" alt="Sapa">
                                
                             </a>
@@ -1245,10 +1245,10 @@
                         <h3 class="widget-title">Enquiry Form </h3>
                         <form onsubmit="sendmail(event)">
                             <div class="newsletter-input">
-                                <input id="name" type="text" class="form-control" name="name" placeholder="Enter your Name">
-                                <input id="number" type="tel" class="form-control" name="number" placeholder="Enter your number">
-                                <input id="email" type="email" class="form-control" name="email" placeholder="Enter your mail">   
-                                <input id="pincode" type="number" class="form-control" name="pincode" placeholder="Enter your pincode">
+                                <input id="name" type="text" class="form-control" name="name" placeholder="Enter your Name" required>
+                                <input id="number" type="tel" class="form-control" name="number" placeholder="Enter your number" required>
+                                <input id="email" type="email" class="form-control" name="email" placeholder="Enter your mail" required>   
+                                <input id="pincode" type="number" class="form-control" name="pincode" placeholder="Enter your pincode" required>
                                 <select id="states" name="state" class="form-control">
                                     <option value="" disabled selected>Select a state</option>
                                     <option value="AP">Andhra Pradesh</option>
