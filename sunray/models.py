@@ -16,11 +16,14 @@ class Project(models.Model):
 
 class LargeProject(models.Model):
     title = models.CharField(max_length=100)
-    name = models.CharField(max_length=50,default='')
-    description = models.TextField()
+    kw=models.CharField(max_length=100,default='')
+    place=models.CharField(max_length=100,default='')
     image = models.ImageField(upload_to='large_projects')  # Upload image to 'media/large_projects'
     date_created = models.DateField(auto_now_add=True)
-    project_details = models.TextField()  # Additional field for project details
+    technology=models.CharField(max_length=100,default='')
+    saves=models.CharField(max_length=50,default='')
+    trees=models.CharField(max_length=50,default='')
+    tons=models.CharField(max_length=50,default='')
 
     def __str__(self):
         return self.title

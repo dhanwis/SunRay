@@ -21,7 +21,8 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+            max-width: 600px;
+            margin-top: 200px;
         }
 
         h2 {
@@ -35,7 +36,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container ">
         <h2>Upload Large Project</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -44,16 +45,28 @@
                 <input type="text" class="form-control" id="title" name="title">
             </div>
             <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name">
+                <label for="volt">KW:</label>
+                <input type="number" class="form-control" id="kw" name="kw">
             </div>
             <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea class="form-control" id="description" name="description"></textarea>
+                <label for="place">place:</label>
+                <textarea class="form-control" id="place" name="place"></textarea>
             </div>
             <div class="form-group">
-                <label for="project_details">Project Details:</label>
-                <textarea class="form-control" id="project_details" name="project_details"></textarea>
+                <label for="Technology">Technology:</label>
+                <input type="text" class="form-control" id="Technology" name="Technology">
+            </div>
+            <div class="form-group">
+                <label for="saves">Saves:</label>
+                <input type="text" class="form-control" id="saves" name="saves">
+            </div>
+            <div class="form-group">
+                <label for="trees">Trees:</label>
+                <input type="text" class="form-control" id="trees" name="trees">
+            </div>
+            <div class="form-group">
+                <label for="tons">Tons:</label>
+                <input type="text" class="form-control" id="tons" name="tons">
             </div>
             <div class="form-group">
                 <label for="image">Image:</label>
