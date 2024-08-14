@@ -1147,39 +1147,38 @@
     {% block content %}
  
 
-
-<div class="section-content ">
-    {% comment %} <div class="container"> {% endcomment %}
-        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="section-content">
+        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                {% for project in large_projects %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
                     <div class="container my-4">
-                        <div class="card shadow-lg border-light" style="border-radius: 20px;">
+                        <div class="card shadow-lg border-light" style="border-radius: 20px; background-image: url('{% static 'images/background/services_bg.jpg' %}'); background-size: cover; background-position: center;"">
                             <div class="card-body">
-                                <div class="row gx-4">
+                                <div class="row gx-4 align-items-center">
                                     <!-- Image Section (Top on Mobile, Right on Larger Screens) -->
                                     <div class="col-12 col-lg-6 order-lg-2 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
-                                        <img src="{% static 'images/new datas/all_projects/Downtown Apartment (7).JPG' %}" class="img-fluid" alt="Mourishka Palace Apartments" style="border-radius: 15px; border: 4px solid lightgrey;">
+                                        <img src="{{ project.image.url }}" class="img-fluid" alt="{{ project.title }}" style="border-radius: 15px; border: 4px solid lightgrey;">
                                     </div>
-        
+    
                                     <!-- Information Section (Below Image on Mobile, Left of Image on Larger Screens) -->
                                     <div class="col-12 col-lg-6 order-lg-1 d-flex flex-column justify-content-center">
-                                        <h3 class="display-6 text-center text-lg-start mb-4">Mourishka Palace Apartments Society, Mangalore</h3>
-        
+                                        <h3 class="display-6 text-center text-lg-start mb-4">{{ project.title }}</h3>
+    
                                         <div class="row">
                                             <!-- Row for Two Icons and Their Content -->
                                             <div class="col-12 col-md-6 d-flex align-items-center mb-4">
-                                                <img src="{% static 'images/projectlogo/solarpanel.png' %}" class="me-2" alt="Solar Icon" style="width: 60px;">
-                                                <div style="margin-left: 15px;">
-                                                    <h5 class="fw-bold mb-0"><b>140 KW</b></h5>
-                                                    <p class="mb-0">Solar Plant for Mourishka Place Apartments Society Mangalore</p>
+                                                <img src="{% static 'images/projectlogo/solarpanel (2).png' %}" class="me-2" alt="Solar Icon" style="width: 60px;">
+                                                <div class="ms-3"  style="margin-left: 15px;">
+                                                    <h5 class="fw-bold mb-0"><b>{{ project.kw }}</b></h5>
+                                                    <p class="mb-0">{{ project.place }}</p>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6 d-flex align-items-center mb-4">
                                                 <img src="{% static 'images/projectlogo/technology.png' %}" class="me-2" alt="Technology Icon" style="width: 60px;">
-                                                <div style="margin-left: 15px;">
+                                                <div class="ms-3"  style="margin-left: 15px;">
                                                     <h5 class="fw-bold mb-1"><b>TECHNOLOGY</b></h5>
-                                                    <p class="mb-0">Poly-PERC Modules & Solar Edge Inverter</p>
+                                                    <p class="mb-0">{{ project.technology }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1187,15 +1186,15 @@
                                             <!-- Row for Two More Icons and Their Content -->
                                             <div class="col-12 col-md-6 d-flex align-items-center mb-4">
                                                 <img src="{% static 'images/projectlogo/savebill.png' %}" class="me-2" alt="Save Icon" style="width: 60px;">
-                                                <div style="margin-left: 15px;">
-                                                    <h5 class="fw-bold mb-1"><b>SAVES 60%</b></h5>
+                                                <div class="ms-3"  style="margin-left: 15px;">
+                                                    <h5 class="fw-bold mb-1"><b>SAVES {{ project.saves }}%</b></h5>
                                                     <p class="mb-0">on electricity bills</p>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6 d-flex align-items-center mb-4">
                                                 <img src="{% static 'images/projectlogo/co2.jpg' %}" class="me-2" alt="CO2 Icon" style="width: 60px;">
-                                                <div style="margin-left: 15px;">
-                                                    <h5 class="fw-bold mb-1"><b>98 TONS</b></h5>
+                                                <div class="ms-3"  style="margin-left: 15px;">
+                                                    <h5 class="fw-bold mb-1"><b>{{ project.tons }} TONS</b></h5>
                                                     <p class="mb-0">of CO2 saved every year</p>
                                                 </div>
                                             </div>
@@ -1204,8 +1203,8 @@
                                             <!-- Last Icon and Its Content -->
                                             <div class="col-12 d-flex align-items-center justify-content-center mb-4">
                                                 <img src="{% static 'images/projectlogo/savetree.png' %}" class="me-2" alt="Tree Icon" style="width: 60px;">
-                                                <div style="margin-left: 15px;">
-                                                    <h5 class="fw-bold mb-1"><b>1129 TREES</b></h5>
+                                                <div class="ms-3 text-center"  style="margin-left: 15px;">
+                                                    <h5 class="fw-bold mb-1"><b>{{ project.trees }} TREES</b></h5>
                                                     <p class="mb-0">planted every year</p>
                                                 </div>
                                             </div>
@@ -1216,53 +1215,22 @@
                         </div>
                     </div>
                 </div>
-                <!-- Add more carousel items here if needed -->
-            </div>
         
+                {% endfor %}
+            </div>
+    
             <!-- Carousel Controls -->
-            <a class="carousel-control-prev" href="#projectCarousel" role="button" data-bs-slide="prev">
+            {% comment %} <a class="carousel-control-prev" href="#projectCarousel" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </a>
             <a class="carousel-control-next" href="#projectCarousel" role="button" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
-            </a>
+            </a> {% endcomment %}
         </div>
-        
-        
-        
-
-        
-        
-        
-        {% comment %} <div class="owl-carousel project-carousel owl-btn-vertical-center m-b30">
-            {% for project in large_projects %}
-            <div style="border-color: #c7c7c748;" class="item card p-2">
-                <div class="project-new-2">
-                    <div class="wt-img-effect">
-                        <img style="border-radius: 5px;" src="{{ project.image.url }}" alt="{{ project.title }}">
-                        <div class="project-view">
-                            <a class="elem pic-long project-view-btn"
-                                href="{{ project.image.url }}" title="{{ project.title }}"
-                                data-lcl-txt="dsds" data-lcl-author="dsdsd"
-                                data-lcl-thumb="{{ project.image.url }}">
-                                <i class="fa fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-new-content2">
-                        <span class="project-new-category rounded">{{ project.name }}</span>
-                        <h3 class="wt-title"><a href="javascript:void(0);">{{ project.title }}</a></h3>
-                        <p style="height: 50px;">{{ project.description }}</p>
-                        <a href="{% url 'large_project_detail' project.pk %}" class="site-button-link site-text-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div> {% endcomment %}
     </div>
-</div>
+    
 
 {% endblock %}
 
@@ -1551,6 +1519,7 @@
     });
 </script> {% endcomment %}
 <!-- JAVASCRIPT  FILES ========================================= -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="{% static 'js/index.js' %}"></script>
 <script src="{% static 'js/jquery-2.2.0.min.js' %}"></script><!-- JQUERY.MIN JS -->
 <script src="{% static 'js/popper.min.js' %}"></script><!-- POPPER.MIN JS -->

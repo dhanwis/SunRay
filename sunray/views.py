@@ -33,9 +33,15 @@ def edit_large_project(request, pk):
         # Handle form submission to edit LargeProject instance
         # Example:
         large_project.title = request.POST['title']
-        large_project.description = request.POST['description']
+        large_project.kw=request.POST['kw']
+        large_project.place= request.POST['place']  # optional field
+        large_project.technology= request.POST['technology']
+        large_project.saves = request.POST['saves']
+        large_project.trees=request.POST['trees']
+        large_project.tons=request.POST['tons']
         if 'image' in request.FILES:
             large_project.image = request.FILES['image']
+        
         # Update other fields as needed
         large_project.save()
         return redirect('dashboard')  # Redirect to dashboard after edit
@@ -127,13 +133,15 @@ def upload_project(request):
 def upload_large_project(request):
     if request.method == 'POST':
         title = request.POST['title']
-        name = request.POST.get('name', '')  # optional field
-        description = request.POST['description']
-        project_details = request.POST.get('project_details', '')  # optional field
+        kw=request.POST['kw']
+        place= request.POST['place']  # optional field
+        technology= request.POST['technology']
+        saves = request.POST['saves']
         image = request.FILES['image']
-
+        trees=request.POST['trees']
+        tons=request.POST['tons']
         # Save the large project object to the database
-        large_project = LargeProject(title=title, name=name, description=description, project_details=project_details, image=image)
+        large_project = LargeProject(title=title, kw=kw, place=place, technology=technology, image=image,saves=saves,trees=trees,tons=tons)
         large_project.save()
 
         return redirect('index')  # Redirect to index page after successful upload

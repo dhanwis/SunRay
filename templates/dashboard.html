@@ -99,25 +99,39 @@
                 </div>
             </div>
             {% endfor %}
-            
-            <!-- {% for large_project in large_projects %}
+        </div>
+    </div>
+    <h2>Large projects</h2>
+    <div class="container mt-4">
+        <div class="row">
+            {% for large_project in large_projects %}
             <div class="col-md-4">
-                <div class="card project-card text-center pt-2 pb-2">
-                    <img src="{{ large_project.image.url }}" class="card-img-top project-img" alt="Large Project Image">
-                    <div class="card-body"> 
+                <div class="card project-card text-center pt-3 pb-3">
+                    <img src="{{ large_project.image.url }}" class="card-img-top project-img mx-auto" alt="Large Project Image" style="max-height: 200px; object-fit: cover;">
+                    <div class="card-body">
                         <h5 class="card-title">{{ large_project.title }}</h5>
-                        <p class="card-text">{{ large_project.description }}</p>
-                        <a href="{% url 'edit_large_project' large_project.pk %}" class="btn btn-primary btn-sm">Edit</a>
-                        <a href="{% url 'delete_large_project' large_project.pk %}" class="btn btn-danger btn-sm ml-2">Delete</a>
+                        <p class="card-text"><strong>KW:</strong> {{ large_project.kw }}</p>
+                        <p class="card-text"><strong>Place:</strong> {{ large_project.place }}</p>
+                        <p class="card-text"><strong>Technology:</strong> {{ large_project.technology }}</p>
+                        <p class="card-text"><strong>Saves:</strong> {{ large_project.saves }}</p>
+                        <p class="card-text"><strong>Trees:</strong> {{ large_project.trees }}</p>
+                        <p class="card-text"><strong>Tons:</strong> {{ large_project.tons }}</p>
+                        <div class="d-flex justify-content-center mt-3">
+                            <a href="{% url 'edit_large_project' large_project.pk %}" class="btn btn-primary btn-sm mr-2">Edit</a>
+                            <a href="{% url 'delete_large_project' large_project.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
                     </div>
                     <div class="card-footer bg-success text-white">
-                        <span class="badge badge-pill badge-light">Large Project</span> # Green label for large projects 
+                        <span class="badge badge-pill badge-light">Large Project</span>
                     </div>
                 </div>
             </div>
-            {% endfor %} -->
+            
+            
+            {% endfor %}
         </div>
     </div>
+      
     
     
     
