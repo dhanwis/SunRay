@@ -144,7 +144,7 @@ def upload_large_project(request):
         large_project = LargeProject(title=title, kw=kw, place=place, technology=technology, image=image,saves=saves,trees=trees,tons=tons)
         large_project.save()
 
-        return redirect('index')  # Redirect to index page after successful upload
+        return redirect('dashboard')  # Redirect to index page after successful upload
 
     return render(request, 'upload_large_project.html')
 

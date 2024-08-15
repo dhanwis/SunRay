@@ -62,6 +62,7 @@
     <link href="https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700&amp;display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;display=swap" rel="stylesheet"> 
+    
   <style>
     /* Custom styles here */
     #map {
@@ -1145,15 +1146,13 @@
 
     <!-- IMAGE CAROUSEL START -->
     {% block content %}
- 
-
     <div class="section-content">
         <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 {% for project in large_projects %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                     <div class="container my-4">
-                        <div class="card shadow-lg border-light" style="border-radius: 20px; background-image: url('{% static 'images/background/services_bg.jpg' %}'); background-size: cover; background-position: center;"">
+                        <div class="card shadow-lg border-light" style="border-radius: 20px; background-image: url('{% static 'images/background/services_bg.jpg' %}'); background-size: cover; background-position: center;">
                             <div class="card-body">
                                 <div class="row gx-4 align-items-center">
                                     <!-- Image Section (Top on Mobile, Right on Larger Screens) -->
@@ -1169,15 +1168,15 @@
                                             <!-- Row for Two Icons and Their Content -->
                                             <div class="col-12 col-md-6 d-flex align-items-center mb-4">
                                                 <img src="{% static 'images/projectlogo/solarpanel (2).png' %}" class="me-2" alt="Solar Icon" style="width: 60px;">
-                                                <div class="ms-3"  style="margin-left: 15px;">
+                                                <div class="ms-3" style="margin-left: 15px;">
                                                     <h5 class="fw-bold mb-0"><b>{{ project.kw }}</b></h5>
                                                     <p class="mb-0">{{ project.place }}</p>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6 d-flex align-items-center mb-4">
-                                                <img src="{% static 'images/projectlogo/technology.png' %}" class="me-2" alt="Technology Icon" style="width: 60px;">
-                                                <div class="ms-3"  style="margin-left: 15px;">
-                                                    <h5 class="fw-bold mb-1"><b>TECHNOLOGY</b></h5>
+                                                <img src="{% static 'images/projectlogo/technology1.png' %}" class="me-2" alt="Technology Icon" style="width: 60px;">
+                                                <div class="ms-3" style="margin-left: 15px;">
+                                                    <h5 class="fw-bold mb-1" style="margin-top: 28px;"><b>TECHNOLOGY</b></h5>
                                                     <p class="mb-0">{{ project.technology }}</p>
                                                 </div>
                                             </div>
@@ -1185,25 +1184,25 @@
                                         <div class="row">
                                             <!-- Row for Two More Icons and Their Content -->
                                             <div class="col-12 col-md-6 d-flex align-items-center mb-4">
-                                                <img src="{% static 'images/projectlogo/savebill.png' %}" class="me-2" alt="Save Icon" style="width: 60px;">
-                                                <div class="ms-3"  style="margin-left: 15px;">
-                                                    <h5 class="fw-bold mb-1"><b>SAVES {{ project.saves }}%</b></h5>
+                                                <img src="{% static 'images/projectlogo/savebill1.png' %}" class="me-2" alt="Save Icon" style="width: 60px;">
+                                                <div class="ms-3" style="margin-left: 15px;">
+                                                    <h5 class="fw-bold mb-0" style="margin-top: 10px;"><b>SAVES {{ project.saves }}%</b></h5>
                                                     <p class="mb-0">on electricity bills</p>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6 d-flex align-items-center mb-4">
                                                 <img src="{% static 'images/projectlogo/co2.png' %}" class="me-2" alt="CO2 Icon" style="width: 60px;">
-                                                <div class="ms-3"  style="margin-left: 15px;">
-                                                    <h5 class="fw-bold mb-1"><b>{{ project.tons }} TONS</b></h5>
+                                                <div class="ms-3" style="margin-left: 15px;">
+                                                    <h5 class="fw-bold mb-1"  style="margin-top: 27px;"><b>{{ project.tons }} TONS</b></h5>
                                                     <p class="mb-0">of CO2 saved every year</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <!-- Last Icon and Its Content -->
-                                            <div class="col-12 d-flex align-items-center justify-content-center mb-4">
-                                                <img src="{% static 'images/projectlogo/trees.png' %}" class="me-2" alt="Tree Icon" style="width: 60px;">
-                                                <div class="ms-3 text-center"  style="margin-left: 15px;">
+                                            <div class="col-12 d-flex align-items-center mb-4">
+                                                <img src="{% static 'images/projectlogo/trees1.png' %}" class="me-2" alt="Tree Icon" style="width: 60px;">
+                                                <div class="ms-3 text-start text-lg-center" style="margin-left: 15px;">
                                                     <h5 class="fw-bold mb-1"><b>{{ project.trees }} TREES</b></h5>
                                                     <p class="mb-0">planted every year</p>
                                                 </div>
@@ -1215,21 +1214,24 @@
                         </div>
                     </div>
                 </div>
-        
                 {% endfor %}
             </div>
     
             <!-- Carousel Controls -->
-            {% comment %} <a class="carousel-control-prev" href="#projectCarousel" role="button" data-bs-slide="prev">
+            {% comment %} 
+            <a class="carousel-control-prev custom-carousel-control" href="#projectCarousel" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#projectCarousel" role="button" data-bs-slide="next">
+            <a class="carousel-control-next custom-carousel-control" href="#projectCarousel" role="button" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
-            </a> {% endcomment %}
+            </a> 
+            {% endcomment %}
         </div>
     </div>
+    
+    
     
 
 {% endblock %}
