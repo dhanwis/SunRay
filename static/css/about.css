@@ -341,7 +341,8 @@ h2 {
     }
 
     .wt-icon-box-wraper .icon-content p {
-        font-size: 12px; /* Adjust the size of the text "Office:", "Send Us Email", etc. */
+        font-size: 12px;
+         /* Adjust the size of the text "Office:", "Send Us Email", etc. */
     }
 
     .wt-icon-box-wraper .icon-content h4 {
