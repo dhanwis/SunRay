@@ -278,7 +278,7 @@
                             data-thumb="{% static 'images/extra/bgimg1.jpg' %}" data-rotate="0" data-saveperformance="off"
                             data-title="Slide" data-param1="" data-description="">
                             <!-- MAIN IMAGE -->
-                            <img src="{% static 'images/extra/bgimg1.jpg' %}" center=""  data-bgfit="cover"
+                            <img src="{% static 'images/extra/bg.GIF' %}" center=""  data-bgfit="cover"
                                 data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina="">
                             <!-- LAYERS -->
                             <!-- LAYER NR. 2 [ Small Title ] -->
@@ -1148,7 +1148,7 @@
     {% block content %}
     <div class="section-content">
         <div class="carousel-container position-relative">
-            <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+            <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
                 <div class="carousel-inner">
                     {% for project in large_projects %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
