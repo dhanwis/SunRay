@@ -19,7 +19,7 @@
     <title>SunRay-Projects</title>
     
     <!-- MOBILE SPECIFIC -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     
     <!-- BOOTSTRAP STYLE SHEET -->
@@ -76,27 +76,24 @@
 <div>
     <!-- Navigation -->
     <header class="site-header header-style-11  mobile-sider-drawer-menu">
-        <div class="header-style-11-content">
+        <div class="header-style-11-content" style="margin-top: -50px;" >
              <div class="header-middle-wraper">     
                 <div class="container">
                     <div class="header-middle d-flex justify-content-between align-items-center">
                         <div class="logo-header pt-3 pb-3 ">
                             <div class="logo-header-inner logo-header-one">
                                 <a href="{% url 'index' %}">
-                                    <img src="{% static 'images/extra/logo.png' %}" alt="">
+                                    <img src="{% static 'images/extra/logo.png' %}" alt="" width="200px" height="160px"   style="margin-top:30px;">
                                 </a>
                             </div>
                         </div>
                         
                         
-                        <div class="header-info-wraper">
+                        <div class="header-info-wraper" style="margin-top: 25px;" >
                             <div class="header-info">
                                 <ul>
                                     <li>
-
-                        
-                                    <li>
-                                        <div class="wt-icon-box-wraper left">
+                                        <div class="wt-icon-box-wraper left" style="margin-right: 60px; margin-top: 15px;">
                                             <div class="wt-icon-box-xs site-bg-primary radius">
                                                 <span class="icon-cell site-text-white"><i class="fa fa-envelope"></i></span>
                                             </div>
@@ -107,7 +104,8 @@
                                               
                                             </div>
                                         </div>
-                                    </li>                                
+                                    </li>   
+                                                                 
                         
                                     <li>
                                         <div class="wt-icon-box-wraper left">
@@ -116,8 +114,8 @@
                                             </div>
                                             <div class="icon-content">
                                                 <p style="text-align: left;font-size: 14px;">Get Quick Support </p>
-                                                <h4 class="wt-tilte" style="text-align: left" >Tel: 0824 2215291 <br>Mob:9538010100-karnataka<br>
-                                                Mob:7907668181-Kerala</h4>
+                                                <h4 class="wt-tilte" style="text-align: left" >Tel: 0824 2215291 ,Mob:9538010100-karnataka<br>
+                                               <span >Mob:7907668181-Kerala</span> </h4>
                 
                                             </div>
                                         </div>
@@ -125,7 +123,6 @@
                                 </ul>
                             </div>
                         </div>
-    
     
     
                     </div>
@@ -175,7 +172,7 @@
                                             <a href="#search-two" class="header-search-icon"><i class="fa fa-search"></i></a>
                                         </div>    
                                     </div> -->
-                                    <div class="extra-cell two">
+                                    {% comment %} <div class="extra-cell two">
                                         <div class="extra-cell one">
                                             <div class="header-search">
                                                 <a href="#search-two" class="header-search-icon"><i class="fa fa-search"></i></a>
@@ -217,7 +214,7 @@
                                                 </div>
                                             </div>
                                         </div>                            
-                                    </div>                                
+                                    </div>                                 {% endcomment %}
                                 </div> 
     
                             </div>

@@ -19,9 +19,8 @@
     <title>SunRay-Projects</title>
     
     <!-- MOBILE SPECIFIC -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    
     <!-- BOOTSTRAP STYLE SHEET -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
     <!-- FONTAWESOME STYLE SHEET -->
@@ -76,24 +75,24 @@
 <!-- Navigation -->
 <div>
     <!-- Navigation -->
-    <header class="site-header header-style-11  mobile-sider-drawer-menu">
-        <div class="header-style-11-content">
+    <header class="site-header header-style-11  mobile-sider-drawer-menu"  >
+        <div class="header-style-11-content" style="margin-top: -50px;" >
              <div class="header-middle-wraper">     
                 <div class="container">
                     <div class="header-middle d-flex justify-content-between align-items-center">
                         <div class="logo-header pt-3 pb-3">
                             <div class="logo-header-inner logo-header-one">
                                 <a href="{% url 'index' %}">
-                                    <img src="{% static 'images/extra/logo.png' %}" alt="">
+                                    <img src="{% static 'images/extra/logo.png' %}" alt="" width="200px" height="160px"  style="margin-top:30px;">
                                 </a>
                             </div>
                         </div>
                         
-                        <div class="header-info-wraper">
+                        <div class="header-info-wraper" style="margin-top: 25px;" >
                             <div class="header-info">
                                 <ul>
                                     <li>
-                                        <div class="wt-icon-box-wraper left" style="margin-right: 60px;">
+                                        <div class="wt-icon-box-wraper left" style="margin-right: 60px; margin-top: 15px;">
                                             <div class="wt-icon-box-xs site-bg-primary radius">
                                                 <span class="icon-cell site-text-white"><i class="fa fa-envelope"></i></span>
                                             </div>
@@ -129,11 +128,11 @@
                     </div>
                 </div>
              </div>
-            <div class="header-bottom"> 
+            <div class="header-bottom" > 
                 
                 <div class="sticky-header main-bar-wraper  navbar-expand-lg">
                 
-                    <div class="main-bar header-bottom">
+                    <div class="main-bar header-bottom" >
                         <div class="container-block clearfix">
     
                             <div class="navigation-bar">
@@ -880,7 +879,7 @@
                         </div>
 
                         <div class="service-icon-box-title">
-                            <h4 class="wt-title"><a href="service-detail.html">Installation</a></h4>
+                            <h4 class="wt-title"><a href="">Installation</a></h4>
                         </div>
 
                         <div class="service-icon-box-content">
@@ -1303,37 +1302,37 @@
                                 <input id="name" type="text" class="form-control" name="name" placeholder="Enter your Name" required>
                                 <input id="number" type="tel" class="form-control" name="number" placeholder="Enter your number" required>
                                 <input id="email" type="email" class="form-control" name="email" placeholder="Enter your mail" required>   
-                                <input id="pincode" type="number" class="form-control" name="pincode" placeholder="Enter your pincode" required>
+                                <input maxlength="6" id="pincode" type="text" class="form-control" name="pincode" placeholder="Enter your pincode" required>
                                 <select id="states" name="state" class="form-control">
                                     <option value="" disabled selected>Select a state</option>
-                                    <option value="AP">Andhra Pradesh</option>
-                                    <option value="AR">Arunachal Pradesh</option>
-                                    <option value="AS">Assam</option>
-                                    <option value="BR">Bihar</option>
-                                    <option value="CT">Chhattisgarh</option>
-                                    <option value="GA">Goa</option>
-                                    <option value="GJ">Gujarat</option>
-                                    <option value="HR">Haryana</option>
-                                    <option value="HP">Himachal Pradesh</option>
-                                    <option value="JH">Jharkhand</option>
-                                    <option value="KA">Karnataka</option>
-                                    <option value="KL">Kerala</option>
-                                    <option value="MP">Madhya Pradesh</option>
-                                    <option value="MH">Maharashtra</option>
-                                    <option value="MN">Manipur</option>
-                                    <option value="ML">Meghalaya</option>
-                                    <option value="MZ">Mizoram</option>
-                                    <option value="NL">Nagaland</option>
-                                    <option value="OR">Odisha</option>
-                                    <option value="PB">Punjab</option>
-                                    <option value="RJ">Rajasthan</option>
-                                    <option value="SK">Sikkim</option>
-                                    <option value="TN">Tamil Nadu</option>
-                                    <option value="TG">Telangana</option>
-                                    <option value="TR">Tripura</option>
-                                    <option value="UP">Uttar Pradesh</option>
-                                    <option value="UT">Uttarakhand</option>
-                                    <option value="WB">West Bengal</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal PradeshR">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="MizoramMZ">Mizoram</option>
+                                    <option value="NagalandL">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
                                 </select>
                                 <textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Enter your requirements here..."></textarea>
                                 <button type="submit" class="nl-search-btn site-bg-primary title-style-2">Send</button>
