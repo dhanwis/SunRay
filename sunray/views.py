@@ -5,7 +5,7 @@ from .models import Project, LargeProject
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.core.mail import send_mail
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -134,7 +134,7 @@ def upload_large_project(request):
     if request.method == 'POST':
         title = request.POST['title']
         kw=request.POST['kw']
-        place= request.POST['place']  # optional field
+        place= request.POST['place']  
         technology= request.POST['technology']
         saves = request.POST['saves']
         image = request.FILES['image']
